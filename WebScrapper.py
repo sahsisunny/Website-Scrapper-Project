@@ -122,7 +122,6 @@ def FlipDataScrap():
 
 # creating options for MAIN MENU
 while True:
-    os.system('cls')
     print('''
      __        __   _       ____                             _             
      \ \      / /__| |__   / ___|  ___ _ __ __ _ _ __  _ __ (_)_ __   __ _ 
