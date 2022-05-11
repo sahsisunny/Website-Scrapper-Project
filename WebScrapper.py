@@ -43,7 +43,7 @@ def scrapTweetsFromAdvSearch():
                  tweet.retweetCount])
     # Save Data in .CSV File
     df = pd.DataFrame(tweets, columns=['Username', 'Date', 'Tweets', 'Like Count', 'Reply Count', 'Retweet Count'])
-    df.to_csv('TwitterData.csv', index=True, encoding='utf-8')
+    df.to_csv('TwitterDataQuery.csv', index=True, encoding='utf-8')
     print("Tweets Scrapping Done...............")
 
 
@@ -63,7 +63,7 @@ def scrapTweetsUsername():
                  tweet.retweetCount])
     # Save Data in .CSV File
     df = pd.DataFrame(tweets, columns=['Username', 'Date', 'Tweets', 'Like Count', 'Reply Count', 'Retweet Count'])
-    df.to_csv('TwitterData.csv', index=True, encoding='utf-8')
+    df.to_csv('TwitterData_'+uName+'_.csv', index=True, encoding='utf-8')
     print("Tweets Scrapping Done...............")
 
 
@@ -109,17 +109,14 @@ def FlipDataScrap():
         titles = []
         prices = []
         images = []
-        ratings = []
         for d in soup.find_all('div', attrs={'class': '_2kHMtA'}):
             title = d.find('div', attrs={'class': '_4rR01T'})
             price = d.find('div', attrs={'class': '_30jeq3 _1_WHN1'})
             image = d.find('img', attrs={'class': '_396cs4 _3exPp9'})
-            rating = d.find('div', attrs={'class': '_3LWZlK'})
             titles.append(title.string)
             prices.append(price.string)
             images.append(image.get('src'))
-            ratings.append(rating.text)
-        df = pd.DataFrame({'Model Name': titles, 'Price': prices, 'Images': images, 'Ratings': ratings})
+        df = pd.DataFrame({'Model Name': titles, 'Price': prices, 'Images': images})
         df.to_csv('Flipkart Mobile Data_' + pageNum + '.csv', encoding='utf-8')
 
 
