@@ -1,5 +1,7 @@
 ## :open_file_folder:  Website Scraper
-
+- Extract twitter tweets from specific user and number of tweets.
+- Extract tweets using Twitter Advance Search Query.
+- Extract Flipkart Mobile Data using Price Filter.
 
 ## :memo: Decription
  
